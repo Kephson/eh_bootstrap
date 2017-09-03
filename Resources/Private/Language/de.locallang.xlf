@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-09-03T13:47:45Z" product-name="eh_bootstrap">
+		<header/>
+		<body>
+			<trans-unit id="eh_bs_01_title" approved="yes">
+				<source>Example wizard item</source>
+				<target state="translated">Beispiel Wizard Element</target>
+			</trans-unit>
+			<trans-unit id="eh_bs_01_desc" approved="yes">
+				<source>This is a content element of the eh_bootstrap extension.</source>
+				<target state="translated">Die ist ein Beispielelement aus der eh_bootstrap Erweiterung.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

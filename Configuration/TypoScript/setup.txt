@@ -1,0 +1,10 @@
+# setup for ren_link
+tt_content.eh_bs_01 = COA
+tt_content.eh_bs_01 {
+    10 = FLUIDTEMPLATE
+    10 {
+        file = EXT:eh_bootstrap/Resources/Private/Templates/EhBs01.html
+        partialRootPath = EXT:eh_bootstrap/Resources/Private/Partials/
+        layoutRootPath = EXT:eh_bootstrap/Resources/Private/Layouts/
+    }
+}
