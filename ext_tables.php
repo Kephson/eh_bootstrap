@@ -6,7 +6,7 @@ if (!defined('TYPO3_MODE')) {
 
 /* add default pageTS
  * @see https://docs.typo3.org/typo3cms/extensions/fluid_styled_content/7.6/AddingYourOwnContentElements/Index.html
-*/
+ */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
 mod.wizards.newContentElement.wizardItems.common {
 	elements {

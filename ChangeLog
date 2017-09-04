@@ -1,6 +1,7 @@
 2017-09-04  Ephraim Härer  <ephraim.haerer@renolit.com>
 
 	* updated content element as centered button
+	* added Extbase controller class and Eid script
 	* initial release of version 1.0.1
 
 
