@@ -65,7 +65,7 @@ class ext_update {
 	protected function doSomething() {
 		$table = 'tt_content';
 		$res = $this->getDatabaseConnection()->exec_SELECTgetRows(
-				'uid, pid, tstamp, crdate, CType, header', $table, 'CType = \'ren_tile_home\' OR CType = \'ren_tile_product\' OR CType = \'ren_topicbox\''
+				'uid, pid, tstamp, crdate, CType, header', $table, '', '', '', 1000
 		);
 
 		if (count($res) > 0) {

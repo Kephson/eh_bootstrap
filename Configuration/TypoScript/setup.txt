@@ -1,4 +1,32 @@
-# setup for ren_link
+##################
+# Frontend Plugin
+##################
+plugin.tx_ehbootstrap {
+	# Templates for Fluid
+	view {
+		templateRootPaths {
+			0 = EXT:eh_bootstrap/Resources/Private/Templates/
+			1 = {$plugin.tx_ehbootstrap.view.templateRootPath}
+		}
+		partialRootPaths {
+			0 = EXT:eh_bootstrap/Resources/Private/Partials/
+			1 = {$plugin.tx_ehbootstrap.view.partialRootPath}
+		}
+		layoutRootPaths {
+			0 = EXT:eh_bootstrap/Resources/Private/Layouts/
+			1 = {$plugin.tx_ehbootstrap.view.layoutRootPath}
+		}
+	}
+
+	# Main settings
+	settings {
+		example = {$plugin.tx_ehbootstrap.settings.example}
+	}
+}
+
+##################
+# Content elements
+##################
 tt_content.eh_bs_01 = COA
 tt_content.eh_bs_01 {
     10 = FLUIDTEMPLATE

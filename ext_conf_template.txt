@@ -1,0 +1,4 @@
+# cat=basic; type=boolean; label=Example for boolean
+boolean = 1
+# cat=basic; type=string; label=Example uri
+example_uri = https://www.github.com

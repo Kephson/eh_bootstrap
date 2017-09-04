@@ -6,7 +6,7 @@
     <form action="{formAction}" method="POST">
         <f:form.hidden name="doSomething" value="1"/>
         <p>
-            Load data from tt_content table (max. 30 items)?
+            Load data from tt_content table?
         </p>
         <f:form.button class="btn btn-default btn-sm">
             Load now
@@ -14,25 +14,26 @@
     </form>
 	
 	<f:if condition="{contentElements}">
-		<table>
-			<th>
-				<td>Uid</td>
-				<td>Pid</td>
-				<td>Timestamp</td>
-				<td>Creation date</td>
-				<td>CType</td>
-				<td>Header</td>
-			</th>
-		<f:for each="{contentElements}" as="contentElement">
+		<hr />
+		<table class="table table-striped">
+			<tr>
+				<th>Uid</th>
+				<th>Pid</th>
+				<th>Timestamp</th>
+				<th>Creation date</th>
+				<th>CType</th>
+				<th>Header</th>
+			</tr>
+			<f:for each="{contentElements}" as="contentElement">
 			<tr>
 				<td>{contentElement.uid}</td>
 				<td>{contentElement.pid}</td>
-				<td>{contentElement.tstamp}</td>
-				<td>{contentElement.crdate}</td>
+				<td><f:format.date date="{contentElement.tstamp}" format="d.m.Y" /></td>
+				<td><f:format.date date="{contentElement.crdate}" format="d.m.Y" /></td>
 				<td>{contentElement.CType}</td>
 				<td>{contentElement.header}</td>
 			</tr>
-		</f:for>
+			</f:for>
 		</table>
 	</f:if>
 </f:section>

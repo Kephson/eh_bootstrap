@@ -4,10 +4,16 @@
 		<header/>
 		<body>
 			<trans-unit id="eh_bs_01_title">
-				<source>Example wizard item</source>
+				<source>Simple centered button</source>
 			</trans-unit>
 			<trans-unit id="eh_bs_01_desc">
 				<source>This is a content element of the eh_bootstrap extension.</source>
+			</trans-unit>
+			<trans-unit id="eh_bs_01_header_title">
+				<source>Button text</source>
+			</trans-unit>
+			<trans-unit id="palettes.eh_bs_01">
+				<source>Centered button</source>
 			</trans-unit>
 		</body>
 	</file>

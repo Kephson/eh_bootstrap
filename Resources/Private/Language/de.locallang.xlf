@@ -4,12 +4,20 @@
 		<header/>
 		<body>
 			<trans-unit id="eh_bs_01_title" approved="yes">
-				<source>Example wizard item</source>
-				<target state="translated">Beispiel Wizard Element</target>
+				<source>Simple centered button</source>
+				<target state="translated">Einfacher zentrierter Button</target>
 			</trans-unit>
 			<trans-unit id="eh_bs_01_desc" approved="yes">
 				<source>This is a content element of the eh_bootstrap extension.</source>
 				<target state="translated">Die ist ein Beispielelement aus der eh_bootstrap Erweiterung.</target>
+			</trans-unit>
+			<trans-unit id="eh_bs_01_header_title" approved="yes">
+				<source>Button text</source>
+				<target state="translated">Button Text</target>
+			</trans-unit>
+			<trans-unit id="palettes.eh_bs_01" approved="yes">
+				<source>Centered button</source>
+				<target state="translated">Zentrierter Button</target>
 			</trans-unit>
 		</body>
 	</file>

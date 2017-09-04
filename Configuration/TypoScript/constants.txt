@@ -1,0 +1,17 @@
+plugin.tx_ehbootstrap {
+	view {
+		# cat=powermail_main/file; type=string; label= Path to template root (FE)
+		templateRootPath = EXT:powermail/Resources/Private/Templates/
+
+		# cat=powermail_main/file; type=string; label= Path to template partials (FE)
+		partialRootPath = EXT:powermail/Resources/Private/Partials/
+
+		# cat=powermail_main/file; type=string; label= Path to template layouts (FE)
+		layoutRootPath = EXT:powermail/Resources/Private/Layouts/
+	}
+
+	# Main settings
+	settings {
+		example = This is an example variable
+	}
+}

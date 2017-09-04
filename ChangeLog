@@ -1,4 +1,11 @@
+2017-09-04  Ephraim Härer  <ephraim.haerer@renolit.com>
+
+	* updated content element as centered button
+	* initial release of version 1.0.1
+
+
 2017-09-03  Ephraim Härer  <ephraim.haerer@renolit.com>
 
 	* added first classes and extension manager update class
+	* icon from https://github.com/stephenhutchings/typicons.font
 	* initial release of version 1.0.0
