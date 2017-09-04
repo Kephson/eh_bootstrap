@@ -1,13 +1,14 @@
 <?php
+
 /* TCA config
  * @see https://docs.typo3.org/typo3cms/extensions/fluid_styled_content/7.6/AddingYourOwnContentElements/Index.html
-*/
+ */
 // add the new CType
 $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'][] = array(
 	'LLL:EXT:eh_bootstrap/Resources/Private/Language/locallang.xlf:eh_bs_01_title',
 	'eh_bs_01',
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('eh_bootstrap') . 'ext_icon.png'
-	// doesnt't work in TYPO3 7.6 with FILE:EXT:
+		// doesnt't work in TYPO3 7.6 with FILE:EXT:
 );
 // add a new palette for example content element
 // example with field header and header link
