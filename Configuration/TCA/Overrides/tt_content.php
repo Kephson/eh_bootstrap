@@ -1,4 +1,7 @@
 <?php
+/* TCA config
+ * @see https://docs.typo3.org/typo3cms/extensions/fluid_styled_content/7.6/AddingYourOwnContentElements/Index.html
+*/
 // add the new CType
 $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'][] = array(
 	'LLL:EXT:eh_bootstrap/Resources/Private/Language/locallang.xlf:eh_bs_01_title',
@@ -14,7 +17,8 @@ $GLOBALS['TCA']['tt_content']['palettes']['eh_bs_01'] = array(
 	'canNotCollapse' => 1
 );
 // configure the shown palettes
-$GLOBALS['TCA']['tt_content']['types']['eh_bs_01']['showitem'] = '
+$GLOBALS['TCA']['tt_content']['types']['eh_bs_01'] = array(
+	'showitem' => '
     --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
     --palette--;LLL:EXT:eh_bootstrap/Resources/Private/Language/locallang.xlf:palettes.eh_bs_01;eh_bs_01,
 	--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
@@ -22,4 +26,5 @@ $GLOBALS['TCA']['tt_content']['types']['eh_bs_01']['showitem'] = '
     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
 	--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,
 	--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-	--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.extended,rowDescription';
+	--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.extended,rowDescription
+');

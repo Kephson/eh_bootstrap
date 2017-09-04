@@ -34,5 +34,5 @@ tt_content.eh_bs_01 {
         file = EXT:eh_bootstrap/Resources/Private/Templates/EhBs01.html
         partialRootPath = EXT:eh_bootstrap/Resources/Private/Partials/
         layoutRootPath = EXT:eh_bootstrap/Resources/Private/Layouts/
-    }
+	}
 }
