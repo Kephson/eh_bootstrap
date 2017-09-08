@@ -1,5 +1,4 @@
 <?php
-
 if (!defined('TYPO3_MODE')) {
 	die('Access denied.');
 }
@@ -10,7 +9,7 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php'][
 // register Extbase plugin
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'EHAERER.' . $_EXTKEY, 'Ehbs', array(
-	'Abstract' => 'render',
+	'Abstract' => 'plugin, render',
 	),
 	// non-cacheable actions
 	array(

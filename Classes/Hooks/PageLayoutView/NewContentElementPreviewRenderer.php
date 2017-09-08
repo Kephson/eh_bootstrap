@@ -1,5 +1,4 @@
 <?php
-
 namespace EHAERER\EhBootstrap\Hooks\PageLayoutView;
 
 /*
@@ -21,7 +20,8 @@ use \TYPO3\CMS\Backend\View\PageLayoutView;
 /**
  * Contains a preview rendering for the page module of CType="yourextensionkey_newcontentelement"
  */
-class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInterface {
+class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInterface
+{
 
 	/**
 	 * Preprocesses the preview rendering of a content element of type "My new content element"
@@ -36,11 +36,11 @@ class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInte
 	 */
 	public function preProcess(
 	PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row
-	) {
+	)
+	{
 		if ($row['CType'] === 'eh_bs_01') {
-			$itemContent .= '<p class="text-center"><span title="'.$row['header'].'" class="btn btn-default">'.$row['header'].'</span></p>';
+			$itemContent .= '<p class="text-center"><span title="' . $row['header'] . '" class="btn btn-default">' . $row['header'] . '</span></p>';
 			$drawItem = false;
 		}
 	}
-
 }

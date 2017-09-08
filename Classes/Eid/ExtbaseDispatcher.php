@@ -96,7 +96,6 @@ $GLOBALS['TSFE'] = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(TYPO3\CM
 \TYPO3\CMS\Frontend\Utility\EidUtility::initLanguage();
 //init TCA to load content elements
 //\TYPO3\CMS\Frontend\Utility\EidUtility::initTCA();
-
 // Get FE User Information
 $GLOBALS['TSFE']->initFEuser();
 // get backend user information

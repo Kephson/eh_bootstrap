@@ -1,8 +1,20 @@
+2017-09-08  Ephraim Härer  <ephraim.haerer@renolit.com>
+
+	* formatted with PSR
+	* release of version 1.0.2
+
+
+2017-09-06  Ephraim Härer  <ephraim.haerer@renolit.com>
+
+	* added links
+	* https://docs.typo3.org/typo3cms/CoreApiReference/singlehtml/
+
+
 2017-09-04  Ephraim Härer  <ephraim.haerer@renolit.com>
 
 	* updated content element as centered button
 	* added Extbase controller class and Eid script
-	* initial release of version 1.0.1
+	* release of version 1.0.1
 
 
 2017-09-03  Ephraim Härer  <ephraim.haerer@renolit.com>

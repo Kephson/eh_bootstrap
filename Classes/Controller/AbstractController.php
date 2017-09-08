@@ -1,5 +1,4 @@
 <?php
-
 namespace EHAERER\EhBootstrap\Controller;
 
 /* * *************************************************************
@@ -49,26 +48,60 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 	protected $persistenceManager;
 
 	/**
-	 * @var \In2code\Powermail\Domain\Repository\MailRepository
-	 * @inject
+	 * extension key
+	 * 
+	 * @var string
 	 */
-	protected $mailRepository;
+	protected $extKey = 'eh_bootstrap';
+
+	/**
+	 * settings in extension manager
+	 * 
+	 * @var array
+	 */
+	protected $emSettings;
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->emSettings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this->extKey]);
+	}
+
+	/**
+	 * action plugin
+	 *
+	 * @return \string The rendered view.
+	 */
+	public function pluginAction()
+	{
+
+		$this->view->assignMultiple(
+			array(
+				'emSettings' => $this->emSettings
+			)
+		);
+	}
 
 	/**
 	 * action render
 	 *
 	 * @return \string The rendered view.
 	 */
-	public function renderAction() {
+	public function renderAction()
+	{
 		// show it only for logged in backend users
+		$example = NULL;
 		if ($GLOBALS['TSFE']->beUserLogin) {
-			if ($this->request->hasArgument('mailuid')) {
-				$mailuid = (int) $this->request->getArgument('mailuid');
-				$mail = $this->mailRepository->findByUid($mailuid);
-				//DebuggerUtility::var_dump($mail);
-				$this->view->assign("mail", $mail);
+			if ($this->request->hasArgument('exampleUid')) {
+				//$exampleUid = (int) $this->request->getArgument('exampleUid');
+				$example = NULL;
 			}
 		}
+		$this->view->assignMultiple(
+			array(
+				"example" => $example,
+				'emSettings' => $this->emSettings
+			)
+		);
 	}
-
 }

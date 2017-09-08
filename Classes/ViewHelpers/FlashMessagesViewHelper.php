@@ -1,5 +1,4 @@
 <?php
-
 namespace EHAERER\EhBootstrap\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -9,7 +8,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  *
  * @package EHAERER\EhBootstrap\ViewHelpers
  */
-class FlashMessagesViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class FlashMessagesViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
+{
 
 	/**
 	 * @var boolean
@@ -24,7 +24,8 @@ class FlashMessagesViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractV
 	 * @param string $as
 	 * @return string rendered Flash Messages, if there are any.
 	 */
-	public function render($as = 'flashMessages') {
+	public function render($as = 'flashMessages')
+	{
 		$content = null;
 
 		$flashMessages = $this->getFlashMessageQueue()->getAllMessagesAndFlush();
@@ -41,7 +42,8 @@ class FlashMessagesViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractV
 	/**
 	 * @return \TYPO3\CMS\Core\Messaging\FlashMessageQueue
 	 */
-	protected function getFlashMessageQueue() {
+	protected function getFlashMessageQueue()
+	{
 		if (!isset($this->flashMessageQueue)) {
 			/** @var \TYPO3\CMS\Core\Messaging\FlashMessageService $flashMessageService */
 			$flashMessageService = $this->getObjectManager()->get(\TYPO3\CMS\Core\Messaging\FlashMessageService::class);
@@ -53,11 +55,11 @@ class FlashMessagesViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractV
 	/**
 	 * @return \TYPO3\CMS\Extbase\Object\ObjectManager
 	 */
-	protected function getObjectManager() {
+	protected function getObjectManager()
+	{
 		if (!isset($this->objectManager)) {
 			$this->objectManager = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
 		}
 		return $this->objectManager;
 	}
-
 }
