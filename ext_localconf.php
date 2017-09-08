@@ -20,3 +20,11 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php'][
 
 // register the class for ajax via eid and Extbase class
 $GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['ehBootstrap'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Eid/ExtbaseDispatcher.php';
+
+// registering a scheduler task which is not command controller based
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\EHAERER\EhBootstrap\Task\Example::class] = array(
+	'extension' => $_EXTKEY,
+	'title' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang.xlf:example_task_h',
+	'description' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang.xlf:example_task_t',
+	'additionalFields' => \EHAERER\EhBootstrap\Task\ExampleTaskFields::class
+);

@@ -15,6 +15,30 @@
 			<trans-unit id="palettes.eh_bs_01">
 				<source>Centered button</source>
 			</trans-unit>
+			<trans-unit id="example_task_h">
+				<source>Example task</source>
+			</trans-unit>
+			<trans-unit id="example_task_t">
+				<source>This is an example task which is doing nothing.</source>
+			</trans-unit>
+			<trans-unit id="task_f_0">
+				<source>http-link or page id</source>
+			</trans-unit>
+			<trans-unit id="task_f_1">
+				<source>Language</source>
+			</trans-unit>
+			<trans-unit id="task_en">
+				<source>English</source>
+			</trans-unit>
+			<trans-unit id="task_de">
+				<source>German</source>
+			</trans-unit>
+			<trans-unit id="task_f_0_message_error_head">
+				<source>No link found</source>
+			</trans-unit>
+			<trans-unit id="task_f_0_message_error_body">
+				<source>Please enter a page id or a http-link to the link field.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -19,6 +19,38 @@
 				<source>Centered button</source>
 				<target state="translated">Zentrierter Button</target>
 			</trans-unit>
+			<trans-unit id="example_task_h" approved="yes">
+				<source>Example task</source> 
+				<target state="translated">Beispiel Task</target>
+			</trans-unit>
+			<trans-unit id="example_task_t" approved="yes">
+				<source>This is an example task which is doing nothing.</source>
+				<target state="translated">Ein Beispiel für einen Scheduler-Task ohne Funktion.</target>
+			</trans-unit>
+			<trans-unit id="task_f_0" approved="yes">
+				<source>http-link or page id</source> 
+				<target state="translated">http-Link oder Seiten-ID</target>
+			</trans-unit>
+			<trans-unit id="task_f_1" approved="yes">
+				<source>Language</source> 
+				<target state="translated">Sprache</target>
+			</trans-unit>
+			<trans-unit id="task_en" approved="yes">
+				<source>English</source> 
+				<target state="translated">Englisch</target>
+			</trans-unit>
+			<trans-unit id="task_de" approved="yes">
+				<source>German</source> 
+				<target state="translated">Deutsch</target>
+			</trans-unit>
+			<trans-unit id="task_f_0_message_error_head" approved="yes">
+				<source>No link found</source> 
+				<target state="translated">Kein Link gefunden</target>
+			</trans-unit>
+			<trans-unit id="task_f_0_message_error_body" approved="yes">
+				<source>Please enter a page id or a http-link to the link field.</source> 
+				<target state="translated">Bitte geben Sie eine Seiten-ID oder einen http-Link in das vorgesehene Feld ein.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
