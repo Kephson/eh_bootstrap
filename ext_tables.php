@@ -23,6 +23,7 @@ mod.wizards.newContentElement.wizardItems.common {
 ');
 
 // register the plugin to see it in TYPO3 backend
+/* @see https://docs.typo3.org/typo3cms/ExtbaseFluidBook/4-FirstExtension/7-configuring-the-plugin.html */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	$_EXTKEY, 'Ehbs', 'Example plugin'
 );

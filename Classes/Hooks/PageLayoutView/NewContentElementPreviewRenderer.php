@@ -16,6 +16,8 @@ namespace EHAERER\EhBootstrap\Hooks\PageLayoutView;
 
 use \TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
 use \TYPO3\CMS\Backend\View\PageLayoutView;
+use \TYPO3\CMS\Core\Utility\GeneralUtility;
+use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 /**
  * Contains a preview rendering for the page module of CType="yourextensionkey_newcontentelement"
@@ -38,9 +40,37 @@ class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInte
 	PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row
 	)
 	{
+		// content element
 		if ($row['CType'] === 'eh_bs_01') {
 			$itemContent .= '<p class="text-center"><span title="' . $row['header'] . '" class="btn btn-default">' . $row['header'] . '</span></p>';
 			$drawItem = false;
 		}
+		// extbase plugin
+		if ($row['CType'] === 'list' && $row['list_type'] === 'ehbootstrap_ehbs') {
+			$drawItem = true;
+			$itemContent .= $this->renderFluidStandAlone();
+		}
+	}
+
+	/**
+	 * extension key
+	 * 
+	 * @var string
+	 */
+	protected $extKey = 'eh_bootstrap';
+
+	/**
+	 * 
+	 * @param string $templatePath
+	 * @return string
+	 */
+	protected function renderFluidStandAlone($templatePath = 'Abstract/PluginPreview.html')
+	{
+		$view = GeneralUtility::makeInstance(\TYPO3\CMS\Fluid\View\StandaloneView::class);
+		$view->getRequest()->setControllerExtensionName($this->extKey); // path the extension name to get translation work
+		$view->setPartialRootPaths(array(100 => ExtensionManagementUtility::extPath($this->extKey) . 'Resources/Private/Partials/'));
+		$view->setLayoutRootPaths(array(100 => ExtensionManagementUtility::extPath($this->extKey) . 'Resources/Private/Layouts/'));
+		$view->setTemplatePathAndFilename(ExtensionManagementUtility::extPath($this->extKey) . 'Resources/Private/Templates/' . $templatePath);
+		return $view->render();
 	}
 }

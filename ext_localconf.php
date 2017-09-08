@@ -7,6 +7,7 @@ if (!defined('TYPO3_MODE')) {
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['eh_bs_01'] = \EHAERER\EhBootstrap\Hooks\PageLayoutView\NewContentElementPreviewRenderer::class;
 
 // register Extbase plugin
+/* @see https://docs.typo3.org/typo3cms/ExtbaseFluidBook/4-FirstExtension/7-configuring-the-plugin.html */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'EHAERER.' . $_EXTKEY, 'Ehbs', array(
 	'Abstract' => 'plugin, render',
