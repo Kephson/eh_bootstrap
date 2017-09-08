@@ -1,6 +1,7 @@
 2017-09-08  Ephraim Härer  <ephraim.haerer@renolit.com>
 
 	* formatted with PSR
+	* added eId functionality to show extension manager configuration
 	* release of version 1.0.2
 
 

@@ -38,7 +38,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'author' => 'Ephraim Härer',
 	'author_email' => 'ephraim@ephespage.de',
 	'author_company' => 'private',
-	'version' => '1.0.1',
+	'version' => '1.0.2',
 	'clearcacheonload' => true,
 );
 

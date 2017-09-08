@@ -36,3 +36,9 @@ tt_content.eh_bs_01 {
         layoutRootPath = EXT:eh_bootstrap/Resources/Private/Layouts/
 	}
 }
+
+page {
+    includeJSFooterlibs {
+        eh_bootstrap = EXT:eh_bootstrap/Resources/Public/JavaScript/main.js
+    }
+}

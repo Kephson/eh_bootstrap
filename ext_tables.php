@@ -3,7 +3,7 @@ if (!defined('TYPO3_MODE')) {
 	die('Access denied.');
 }
 
-/* add default pageTS
+/* add a default pageTS
  * @see https://docs.typo3.org/typo3cms/extensions/fluid_styled_content/7.6/AddingYourOwnContentElements/Index.html
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
@@ -21,4 +21,9 @@ mod.wizards.newContentElement.wizardItems.common {
 	show := addToList(eh_bs_01)
 }
 ');
+
+// register the plugin to see it in TYPO3 backend
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	$_EXTKEY, 'Ehbs', 'Example plugin'
+);
 
