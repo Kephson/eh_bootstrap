@@ -1,0 +1,5 @@
+{
+	"name": "ehaerer/eh-bootstrap",
+	"type": "typo3-cms-extension",
+	"description": "Bootstrap extension with examples of update script, eid integration, scheduler tasks."
+}
