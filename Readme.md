@@ -35,7 +35,7 @@ Download and install the extension with the extension manager module.
 
 ### 2) Minimal setup
 
-No special setup is needed. All files will be included automatically.
+No special setup is needed. All files will be included automatically. Read the [documentation](Documentation/Introduction/Index.rst).
 
 
 

@@ -8,8 +8,8 @@
  * ************************************************************* */
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'Bootstrap example extension',
-	'description' => 'Bootstrap extension with examples of update script, eid integration, scheduler tasks.',
+	'title' => 'TYPO3 CMS example extension',
+	'description' => 'A TYPO3 example extension with examples of update script, eID integration, scheduler tasks.',
 	'category' => 'example',
 	'constraints' =>
 	array(
