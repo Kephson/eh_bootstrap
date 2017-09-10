@@ -39,6 +39,12 @@
 			<trans-unit id="task_f_0_message_error_body">
 				<source>Please enter a page id or a http-link to the link field.</source>
 			</trans-unit>
+			<trans-unit id="mlang_tabs_tab">
+				<source>Example module</source>
+			</trans-unit>
+			<trans-unit id="mlang_labels_tabdescr">
+				<source>Example backend module</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

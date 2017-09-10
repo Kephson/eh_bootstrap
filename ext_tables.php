@@ -28,3 +28,24 @@ mod.wizards.newContentElement.wizardItems.common {
 	$_EXTKEY, 'Ehbs', 'Example plugin'
 );
 
+
+if (TYPO3_MODE === 'BE') {
+
+	/**
+	 * Register the Backend Module
+	 */
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+		'EHAERER.' . $_EXTKEY, 'web', // Make module a submodule of 'web'
+		'ehbootstrap', // Submodule key
+		'', // Position
+		array(
+		'Abstract' => 'module',
+		), array(
+		'access' => 'user,group',
+		'icon' => 'EXT:' . $_EXTKEY . '/ext_icon.svg',
+		'labels' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang.xlf',
+		'navigationComponentId' => '',
+		'inheritNavigationComponentFromMainModule' => false
+		)
+	);
+}

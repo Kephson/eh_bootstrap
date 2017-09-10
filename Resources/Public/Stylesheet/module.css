@@ -1,0 +1,8 @@
+.example-module {
+	padding: 40px;
+}
+.example-module .row {
+	width: 100%;
+	clear: both;
+	padding: 0 0 20px 0;
+}

@@ -103,4 +103,19 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 			)
 		);
 	}
+	
+	/**
+	 * action module
+	 *
+	 * @return \string The rendered view. For the backend module
+	 */
+	public function moduleAction()
+	{
+		$this->view->assignMultiple(
+			array(
+				"example" => 'example',
+				'emSettings' => $this->emSettings
+			)
+		);
+	}
 }

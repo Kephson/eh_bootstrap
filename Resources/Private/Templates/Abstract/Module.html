@@ -1,0 +1,21 @@
+<f:be.container includeCssFiles="{0:'EXT:eh_bootstrap/Resources/Public/Stylesheet/module.css'}">
+
+	<div class="example-module">
+		<f:flashMessages/>
+
+		<f:form action="module" object="{example}" additionalAttributes="{autocomplete:'off'}" class="startform" name="example">
+
+			<div class="row">
+				<h1><f:translate key="mlang_tabs_tab" /></h1>
+			</div>
+			<div class="row">
+				<f:form.textfield property="field1" size="40" />
+			</div>
+			<div class="row">
+				<f:form.submit value="Submit"></f:form.submit>
+			</div>
+
+		</f:form>
+	</div>
+
+</f:be.container>

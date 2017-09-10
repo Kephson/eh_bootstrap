@@ -1,6 +1,7 @@
 2017-09-10  Ephraim Härer  <ephraim.haerer@renolit.com>
 
 	* improved compatibility with TYPO3 8
+	* added backend example module
 	* release of version 1.0.3
 
 

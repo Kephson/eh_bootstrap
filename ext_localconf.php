@@ -22,6 +22,7 @@ $GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['ehBootstrap'] = \TYPO3\CMS\Cor
 if (TYPO3_MODE === 'BE') {
 
 	// Register for hook to show preview of tt_content element of CType="yourextensionkey_newcontentelement" in page module
+	// renders the backend preview for the extbase plugin and for the content element
 	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['eh_bs_01'] = \EHAERER\EhBootstrap\Hooks\PageLayoutView\NewContentElementPreviewRenderer::class;
 
 	// registering a scheduler task which is not command controller based

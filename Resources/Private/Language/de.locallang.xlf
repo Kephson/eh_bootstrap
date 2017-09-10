@@ -51,6 +51,14 @@
 				<source>Please enter a page id or a http-link to the link field.</source> 
 				<target state="translated">Bitte geben Sie eine Seiten-ID oder einen http-Link in das vorgesehene Feld ein.</target>
 			</trans-unit>
+			<trans-unit id="mlang_tabs_tab">
+				<source>Example module</source>
+				<target state="translated">Beispiel Modul</target>
+			</trans-unit>
+			<trans-unit id="mlang_labels_tabdescr">
+				<source>Example backend module</source>
+				<target state="translated">Beispiel Modul im Backend</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
