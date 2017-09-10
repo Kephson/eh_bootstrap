@@ -34,6 +34,7 @@ Classes/Controller/AbstractController.php and written to a variable which
 could be accessed inside of the class.
 
 .. code-block:: php
+
 	/**
 	 * settings in extension manager
 	 * [Example-1]
