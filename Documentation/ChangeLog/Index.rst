@@ -10,6 +10,7 @@ ChangeLog
 
 	* improved compatibility with TYPO3 8
 	* added backend example module
+	* added documentation to get the extension ready for TER
 	* release of version 1.0.3
 
 

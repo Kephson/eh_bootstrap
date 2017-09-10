@@ -56,6 +56,7 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
 	/**
 	 * settings in extension manager
+	 * [Example-1]
 	 * 
 	 * @var array
 	 */
@@ -64,6 +65,8 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 	public function __construct()
 	{
 		parent::__construct();
+
+		/* [Example-1] */
 		$this->emSettings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this->extKey]);
 	}
 
@@ -103,7 +106,7 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 			)
 		);
 	}
-	
+
 	/**
 	 * action module
 	 *
