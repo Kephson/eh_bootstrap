@@ -6,14 +6,14 @@
 $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'][] = array(
 	'LLL:EXT:eh_bootstrap/Resources/Private/Language/locallang.xlf:eh_bs_01_title',
 	'eh_bs_01',
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('eh_bootstrap') . 'ext_icon.png'
+	'EXT:eh_bootstrap/ext_icon.png'
 	// doesnt't work in TYPO3 7.6 with FILE:EXT:
 );
 // add a new palette for example content element
 // example with field header and header link
 $GLOBALS['TCA']['tt_content']['palettes']['eh_bs_01'] = array(
 	'showitem' => 'header;LLL:EXT:eh_bootstrap/Resources/Private/Language/locallang.xlf:eh_bs_01_header_title,
-         --linebreak--,header_link;LLL:EXT:cms/locallang_ttc.xlf:header_link_formlabel',
+         --linebreak--,header_link;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
 	'canNotCollapse' => 1
 );
 // configure the shown palettes

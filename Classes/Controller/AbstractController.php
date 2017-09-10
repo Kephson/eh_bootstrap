@@ -74,7 +74,6 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 	 */
 	public function pluginAction()
 	{
-
 		$this->view->assignMultiple(
 			array(
 				'emSettings' => $this->emSettings

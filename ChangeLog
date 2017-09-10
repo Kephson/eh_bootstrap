@@ -1,3 +1,9 @@
+2017-09-10  Ephraim Härer  <ephraim.haerer@renolit.com>
+
+	* improved compatibility with TYPO3 8
+	* release of version 1.0.3
+
+
 2017-09-08  Ephraim Härer  <ephraim.haerer@renolit.com>
 
 	* formatted with PSR
