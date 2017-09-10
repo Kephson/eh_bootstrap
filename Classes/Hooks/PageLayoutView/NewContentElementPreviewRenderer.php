@@ -40,10 +40,6 @@ class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInte
 	PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row
 	)
 	{
-		if ($row['CType'] !== 'eh_bs_01' || $row['list_type'] !== 'ehbootstrap_ehbs') {
-			return;
-		}
-
 		// content element
 		if ($row['CType'] === 'eh_bs_01') {
 			$itemContent .= '<p class="text-center"><span title="' . $row['header'] . '" class="btn btn-default">' . $row['header'] . '</span></p>';
