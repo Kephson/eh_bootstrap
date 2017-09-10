@@ -20,7 +20,7 @@ use \TYPO3\CMS\Core\Utility\GeneralUtility;
 use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 /**
- * Contains a preview rendering for the page module of CType="yourextensionkey_newcontentelement"
+ * Contains a preview rendering for the page module of CType="eh_bs_01"
  */
 class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInterface
 {
@@ -29,7 +29,7 @@ class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInte
 	 * Preprocesses the preview rendering of a content element of type "My new content element"
 	 *
 	 * @param \TYPO3\CMS\Backend\View\PageLayoutView $parentObject Calling parent object
-	 * @param bool $drawItem Whether to draw the item using the default functionality
+	 * @param bool $drawItem Whether to draw the item using the default functionalities
 	 * @param string $headerContent Header content
 	 * @param string $itemContent Item content
 	 * @param array $row Record row of tt_content
@@ -40,6 +40,10 @@ class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInte
 	PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row
 	)
 	{
+		if ($row['CType'] !== 'eh_bs_01' || $row['list_type'] !== 'ehbootstrap_ehbs') {
+			return;
+		}
+
 		// content element
 		if ($row['CType'] === 'eh_bs_01') {
 			$itemContent .= '<p class="text-center"><span title="' . $row['header'] . '" class="btn btn-default">' . $row['header'] . '</span></p>';
