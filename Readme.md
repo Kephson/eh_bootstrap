@@ -35,9 +35,7 @@ Download and install the extension with the extension manager module.
 
 ### 2) Minimal setup
 
-1) Create a plugin on a page and select the Example plugin.
-2) Render the page in frontend and there are two buttons
-3) With the buttons it is possible to test the Ajax requests via eID and typoscript_rendering
+No special setup is needed. All files will be included automatically.
 
 
 

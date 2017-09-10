@@ -3,6 +3,16 @@ if (!defined('TYPO3_MODE')) {
 	die('Access denied.');
 }
 
+/***************
+ * Register Icons
+ */
+$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+$iconRegistry->registerIcon(
+    'eh-bootstrap-icon',
+    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+    ['source' => 'EXT:eh_bootstrap/ext_icon.svg']
+);
+
 /* add a default pageTS
  * @see https://docs.typo3.org/typo3cms/extensions/fluid_styled_content/7.6/AddingYourOwnContentElements/Index.html
  */
@@ -10,7 +20,7 @@ if (!defined('TYPO3_MODE')) {
 mod.wizards.newContentElement.wizardItems.common {
 	elements {
 		eh_bs_01 {
-			icon = EXT:eh_bootstrap/ext_icon.svg
+			iconIdentifier = eh-bootstrap-icon
 			title = LLL:EXT:eh_bootstrap/Resources/Private/Language/locallang.xlf:eh_bs_01_title
 			description = LLL:EXT:eh_bootstrap/Resources/Private/Language/locallang.xlf:eh_bs_01_desc
 			tt_content_defValues {
