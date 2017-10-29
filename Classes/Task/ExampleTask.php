@@ -59,7 +59,7 @@ class ExampleTask
 		// get backend message queue
 		/* @var $flashMessageService \TYPO3\CMS\Core\Messaging\FlashMessageService */
 		$flashMessageService = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Messaging\FlashMessageService::class);
-		$flashMessageQueue = $flashMessageService->getMessageQueueByIdentifier('ehBoostrap.task.default');
+		$flashMessageQueue = $flashMessageService->getMessageQueueByIdentifier();
 		// add message
 		$flashMessageQueue->enqueue($messageOut);
 

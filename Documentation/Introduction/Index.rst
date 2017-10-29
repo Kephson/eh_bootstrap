@@ -19,9 +19,9 @@ I collected some of often used functions/features that I'm using in my own exten
 It's built for developers to use it as an example for using the following functions of the TYPO3 CMS Core:
 	* [Example-1]: Extension Manager configuration file reading (ext_conf_template.txt)
 	* [Example-2]: an update script which could be executed in Extension Manager
-	* [Example-3]: a basic composer.json which will be updated from time to time
+	* [Example-3]: a basic composer.json file
 	* [Example-4]: a custom content element which uses default fields and shows a backend preview (button)
-	* [Example-5]: an Extbase plugin which shows a basic backend preview and renders two buttons for demonstration of AJAX requests
+	* [Example-5]: an Extbase plugin which shows a basic backend preview and renders two buttons to demonstrate AJAX requests
 	* [Example-6]: an example Extbase dispatcher for rendering AJAX requests via eID
 	* [Example-7]: an example for AJAX requests with typoscript_rendering extension
 	* [Example-8]: automatically include the constants and setup for the extension
