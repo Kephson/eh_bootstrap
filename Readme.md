@@ -5,17 +5,20 @@ It could be used as example in the TYPO3 Bootstrap package.
 
 ## Features
 
- - Example for Extension Manager configuration
- - Example for an update script which could be executed in Extension Manager
- - A basic composer.json which will be updated from time to time
- - A custom content element which uses default fields and shows a backend preview (button)
- - An Extbase plugin which shows a basic backend preview and renders two buttons for demonstration of Ajax requests
- - An example Extbase dispatcher for rendering Ajax requests via eID
- - An example for Ajax requests with typoscript_rendering extension
- - Automatically includes the constants and setup for the extension
- - A backend module to show the basic functionality
- - A scheduler task with custom fields
- - A scheduler task as command controller task (could be executed via command line)
+ - [Example-1]: Extension Manager configuration file reading (ext_conf_template.txt)
+ - [Example-2]: an update script which could be executed in Extension Manager
+ - [Example-3]: a basic composer.json which will be updated from time to time
+ - [Example-4]: a custom content element which uses default fields and shows a backend preview (button)
+ - [Example-5]: an Extbase plugin which shows a basic backend preview and renders two buttons for demonstration of AJAX requests
+ - [Example-6]: an example Extbase dispatcher for rendering AJAX requests via eID
+ - [Example-7]: an example for AJAX requests with typoscript_rendering extension
+ - [Example-8]: automatically include the constants and setup for the extension
+ - [Example-9]: a backend module to show the basic functionality
+ - [Example-10]: a default scheduler task with custom fields
+ - [Example-11]: a scheduler task as command controller task (could be executed via command line)
+ - [Example-12]: register extension icons with the icon registry
+ - [Example-13]: custom flash messages ViewHelper to get all flash messages used in [Example-2]
+
 
 ## Usage
 

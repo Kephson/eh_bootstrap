@@ -9,7 +9,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'TYPO3 CMS example extension',
-	'description' => 'A TYPO3 example extension with examples of update script, eID integration, scheduler tasks.',
+	'description' => 'A TYPO3 example extension with examples of update script, eID integration, scheduler tasks and default TypoScript.',
 	'category' => 'example',
 	'constraints' =>
 	array(
@@ -25,8 +25,7 @@ $EM_CONF[$_EXTKEY] = array(
 		array(
 		),
 	),
-	'autoload' =>
-	array(
+	'autoload' => array(
 		'psr-4' =>
 		array(
 			'EHAERER\\EhBootstrap\\' => 'Classes',
@@ -39,7 +38,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'author' => 'Ephraim Härer',
 	'author_email' => 'ephraim@ephespage.de',
 	'author_company' => 'private',
-	'version' => '1.0.3',
+	'version' => '1.0.4',
 	'clearcacheonload' => true,
 );
 

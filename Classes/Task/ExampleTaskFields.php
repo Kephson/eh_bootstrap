@@ -31,6 +31,11 @@ use \TYPO3\CMS\Core\Messaging\FlashMessage;
 use \TYPO3\CMS\Core\Utility\GeneralUtility;
 use \TYPO3\CMS\Core\Utility\DebugUtility;
 
+/**
+ * [Example-10]
+ * additional task class to add custom fields in the scheduler
+ * @see https://docs.typo3.org/typo3cms/extensions/scheduler/DevelopersGuide/CreatingTasks/Index.html
+ */
 class ExampleTaskFields implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderInterface
 {
 
@@ -120,12 +125,14 @@ class ExampleTaskFields implements \TYPO3\CMS\Scheduler\AdditionalFieldProviderI
 
 		if (!empty($errors)) {
 			foreach ($message as $m) {
+				/* @var $messageOut \TYPO3\CMS\Core\Messaging\FlashMessage */
 				$messageOut = GeneralUtility::makeInstance(
 						\TYPO3\CMS\Core\Messaging\FlashMessage::class, $m['body'], $m['head'], FlashMessage::ERROR, FALSE
 				);
 				// get backend message queue
+				/* @var $flashMessageService \TYPO3\CMS\Core\Messaging\FlashMessageService */
 				$flashMessageService = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Messaging\FlashMessageService::class);
-				$flashMessageQueue = $flashMessageService->getMessageQueueByIdentifier();
+				$flashMessageQueue = $flashMessageService->getMessageQueueByIdentifier('ehBoostrap.task.default');
 				// add message
 				$flashMessageQueue->enqueue($messageOut);
 			}

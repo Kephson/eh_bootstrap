@@ -1,6 +1,7 @@
-##################
-# Frontend Plugin
-##################
+################################
+# Setup for extbase plugin
+# [Example-5]
+################################
 plugin.tx_ehbootstrap {
 	# Templates for Fluid
 	view {
@@ -26,6 +27,7 @@ plugin.tx_ehbootstrap {
 
 ##################
 # Content elements
+# [Example-4]
 ##################
 tt_content.eh_bs_01 = COA
 tt_content.eh_bs_01 {
@@ -37,6 +39,9 @@ tt_content.eh_bs_01 {
 	}
 }
 
+##########################
+# Include a basic js file
+##########################
 page {
     includeJSFooterlibs {
         eh_bootstrap = EXT:eh_bootstrap/Resources/Public/JavaScript/main.js

@@ -1,1 +1,2 @@
+# [Example-8]
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:eh_bootstrap/Configuration/TypoScript/setup.txt">

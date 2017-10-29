@@ -29,6 +29,11 @@ namespace EHAERER\EhBootstrap\Task;
 use \TYPO3\CMS\Core\Utility\GeneralUtility;
 use \TYPO3\CMS\Core\Messaging\FlashMessage;
 
+/**
+ * [Example-10]
+ * task class which will be instantiated by the default scheduler class
+ * see: http://docs.typo3.org/typo3cms/extensions/scheduler/latest/DevelopersGuide/CreatingTasks/Index.html
+ */
 class ExampleTask
 {
 
@@ -47,12 +52,14 @@ class ExampleTask
 	 */
 	public function run($link, $transLang)
 	{
+		/* @var $messageOut \TYPO3\CMS\Core\Messaging\FlashMessage */
 		$messageOut = GeneralUtility::makeInstance(
 				\TYPO3\CMS\Core\Messaging\FlashMessage::class, 'Configured link: ' . $link . ' | Configured language: ' . $transLang, 'Field content', FlashMessage::OK, FALSE
 		);
 		// get backend message queue
+		/* @var $flashMessageService \TYPO3\CMS\Core\Messaging\FlashMessageService */
 		$flashMessageService = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Messaging\FlashMessageService::class);
-		$flashMessageQueue = $flashMessageService->getMessageQueueByIdentifier();
+		$flashMessageQueue = $flashMessageService->getMessageQueueByIdentifier('ehBoostrap.task.default');
 		// add message
 		$flashMessageQueue->enqueue($messageOut);
 

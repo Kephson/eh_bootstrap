@@ -6,6 +6,12 @@
 ChangeLog
 =========
 
+2017-10-29  Ephraim Härer  <ephraim.haerer@renolit.com>
+
+	* updated coding with more annotations and links for documentation
+	* release of version 1.0.4
+
+
 2017-09-10  Ephraim Härer  <ephraim.haerer@renolit.com>
 
 	* improved compatibility with TYPO3 8

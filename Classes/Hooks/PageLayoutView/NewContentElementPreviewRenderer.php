@@ -21,6 +21,7 @@ use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 /**
  * Contains a preview rendering for the page module of CType="eh_bs_01"
+ * [Example-4]
  */
 class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInterface
 {
@@ -66,6 +67,7 @@ class NewContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInte
 	 */
 	protected function renderFluidStandAlone($templatePath = 'Abstract/PluginPreview.html')
 	{
+		/* @var $view \TYPO3\CMS\Fluid\View\StandaloneView */
 		$view = GeneralUtility::makeInstance(\TYPO3\CMS\Fluid\View\StandaloneView::class);
 		$view->getRequest()->setControllerExtensionName($this->extKey); // path the extension name to get translation work
 		$view->setPartialRootPaths(array(100 => ExtensionManagementUtility::extPath($this->extKey) . 'Resources/Private/Partials/'));

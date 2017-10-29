@@ -1,3 +1,7 @@
+################################
+# Constants for extbase plugin
+# [Example-5]
+################################
 plugin.tx_ehbootstrap {
 	view {
 		# cat=powermail_main/file; type=string; label= Path to template root (FE)

@@ -51,14 +51,5 @@ could be accessed inside of the class.
 		$this->emSettings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this->extKey]);
 	}
 
-or some other language:
-
-.. code-block:: javascript
-   :linenos:
-   :emphasize-lines: 2-4
-
-	$(document).ready(
-		function () {
-			doStuff();
-		}
-	);
+You should also read the documentation on https://docs.typo3.org/typo3cms/CoreApiReference/ExtensionArchitecture/ConfigurationOptions/Index.html 
+and the information on https://docs.typo3.org/typo3cms/TyposcriptSyntaxReference/TypoScriptTemplates/TheConstantEditor/Index.html#constant-editor.

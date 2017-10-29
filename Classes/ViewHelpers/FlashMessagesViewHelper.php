@@ -5,6 +5,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Display core flash messages
+ * [Example-13]
  *
  * @package EHAERER\EhBootstrap\ViewHelpers
  */

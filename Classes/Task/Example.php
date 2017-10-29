@@ -29,19 +29,20 @@ namespace EHAERER\EhBootstrap\Task;
 use \TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
+ * [Example-10]
  * task class which executes only another class
  * see: http://docs.typo3.org/typo3cms/extensions/scheduler/latest/DevelopersGuide/CreatingTasks/Index.html
  */
 class Example extends \TYPO3\CMS\Scheduler\Task\AbstractTask
 {
-	/*
+
+	/**
 	 * executed by scheduler
 	 */
-
 	public function execute()
 	{
-
-		// initialize task class
+		// initialize task class via make instance because it's easier to add/update the fields later
+		/* @var $exampleTask \EHAERER\EhBootstrap\Task\ExampleTask */
 		$exampleTask = GeneralUtility::makeInstance(\EHAERER\EhBootstrap\Task\ExampleTask::class);
 		return $exampleTask->run($this->link, $this->translang);
 	}

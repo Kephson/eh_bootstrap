@@ -1,5 +1,6 @@
 <?php
-/* TCA config
+/* TCA config for the content element
+ * [Example-4]
  * @see https://docs.typo3.org/typo3cms/extensions/fluid_styled_content/7.6/AddingYourOwnContentElements/Index.html
  */
 // add the new CType

@@ -1,7 +1,6 @@
 $(document).ready(function () {
-	// loading via eId
+	// [Example-6]: loading via eId
 	$('#dataLoader').on('click', function () {
-		console.log('done');
 		var ajaxTime = new Date().getTime();
 		$.ajax({
 			async: 'true',
@@ -30,10 +29,9 @@ $(document).ready(function () {
 			}
 		});
 	});
-	// loading via typoscript_rendering
+	// [Example-7]: loading via typoscript_rendering
 	$('#dataLoader2').on('click', function () {
 		var ajaxTime = new Date().getTime();
-		console.log('done');
 		var ajaxUri = $(this).data('uri');
 		$.ajax({
 			async: 'true',

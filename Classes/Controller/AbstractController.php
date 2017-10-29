@@ -26,15 +26,9 @@ namespace EHAERER\EhBootstrap\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
-use \TYPO3\CMS\Core\Messaging\FlashMessage;
-use \TYPO3\CMS\Core\Utility\GeneralUtility;
-use \TYPO3\CMS\Core\Utility\DebugUtility;
-use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-use \TYPO3\CMS\Extbase\Utility\DebuggerUtility;
-use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
 /**
  * AbstractController
+ * [Example-5]
  */
 class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
@@ -67,11 +61,13 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 		parent::__construct();
 
 		/* [Example-1] */
+		/* visit at the file ext_conf_template.txt to see all options */
 		$this->emSettings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this->extKey]);
 	}
 
 	/**
 	 * action plugin
+	 * Output of the extbase plugin in backend
 	 *
 	 * @return \string The rendered view.
 	 */
@@ -86,6 +82,9 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
 	/**
 	 * action render
+	 * loaded via AJAX to demonstrate the rendering via AJAX
+	 * [Example-6]
+	 * [Example-7]
 	 *
 	 * @return \string The rendered view.
 	 */
@@ -109,6 +108,8 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
 	/**
 	 * action module
+	 * used for the backend module
+	 * [Example-9]
 	 *
 	 * @return \string The rendered view. For the backend module
 	 */

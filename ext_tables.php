@@ -3,18 +3,22 @@ if (!defined('TYPO3_MODE')) {
 	die('Access denied.');
 }
 
-/***************
- * Register Icons
+/*
+ * Register extension icons
+ * this is required for TYPO3 8.7 and available since TYPO3 7.5
+ * @see https://docs.typo3.org/typo3cms/CoreApiReference/ApiOverview/Icon/Index.html
+ * [Example-12]
  */
+/* @var $iconRegistry \TYPO3\CMS\Core\Imaging\IconRegistry */
 $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+// register a svg-icon with the identifier 'eh-bootstrap-icon'
 $iconRegistry->registerIcon(
-    'eh-bootstrap-icon',
-    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-    ['source' => 'EXT:eh_bootstrap/ext_icon.svg']
+	'eh-bootstrap-icon', \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class, ['source' => 'EXT:eh_bootstrap/ext_icon.svg']
 );
 
 /* add a default pageTS
  * @see https://docs.typo3.org/typo3cms/extensions/fluid_styled_content/7.6/AddingYourOwnContentElements/Index.html
+ * [Example-4]
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
 mod.wizards.newContentElement.wizardItems.common {
@@ -34,6 +38,7 @@ mod.wizards.newContentElement.wizardItems.common {
 
 // register the plugin to see it in TYPO3 backend
 /* @see https://docs.typo3.org/typo3cms/ExtbaseFluidBook/4-FirstExtension/7-configuring-the-plugin.html */
+// [Example-5]
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	$_EXTKEY, 'Ehbs', 'Example plugin'
 );
@@ -42,7 +47,8 @@ mod.wizards.newContentElement.wizardItems.common {
 if (TYPO3_MODE === 'BE') {
 
 	/**
-	 * Register the Backend Module
+	 * Register a backend module
+	 * [Example-9]
 	 */
 	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
 		'EHAERER.' . $_EXTKEY, 'web', // Make module a submodule of 'web'

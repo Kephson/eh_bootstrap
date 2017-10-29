@@ -24,6 +24,7 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  *
  *
+ * [Example-6]
  * Usage of this script:
  *
  * - Copy this script in your Extension Dir in the Folder Classes
@@ -31,9 +32,10 @@
  * - Include the next line in the ext_localconf.php, change the ext name!
  * - $TYPO3_CONF_VARS['FE']['eID_include']['myExtAjaxDispatcher'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('myExtension').'Classes/Eid/EidDispatcher.php';
  *
- * tested with TYPO3 7.6
+ * tested with TYPO3 7.6 and 8.7
  * 
- * Use for Ajax Calls in your jQuery Code:
+ * Usage for AJAX calls in your jQuery Code:
+ * see example file Resources/Public/JavaScript/main.js
  *
  * $('.jqAjax').click(function(e) {
  * var uid = $(this).find('.uid').html();
@@ -64,9 +66,9 @@
  *      }
  * });
  * ************************************************************* */
-/**
- * Gets the Ajax Call Parameters
- */
+/* * **********************************
+ * Gets the AJAX Call Parameters
+ * ********************************* */
 $ajax = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('request');
 /**
  * Set Vendor and Extension Name
@@ -92,56 +94,62 @@ if (is_null($pid)) {
 
 global $TYPO3_CONF_VARS;
 
-$GLOBALS['TSFE'] = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController::class, $TYPO3_CONF_VARS, $pid, 0);
+/* @var $GLOBALS['TSFE'] \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController */
+$GLOBALS['TSFE'] = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController::class, $TYPO3_CONF_VARS, $pid, 0);
 \TYPO3\CMS\Frontend\Utility\EidUtility::initLanguage();
-//init TCA to load content elements
-//\TYPO3\CMS\Frontend\Utility\EidUtility::initTCA();
 // Get FE User Information
 $GLOBALS['TSFE']->initFEuser();
 // get backend user information
 $GLOBALS['TSFE']->initializeBackendUser();
-//init TCA to load content elements
+// init TCA to load content elements
 \TYPO3\CMS\Frontend\Utility\EidUtility::initTCA();
-// Important: no Cache for Ajax stuff
+// disable Cache for AJAX calls
 $GLOBALS['TSFE']->set_no_cache();
-//$GLOBALS['TSFE']->checkAlternativCoreMethods();
+// Provides ways to bypass the '?id=[xxx]&type=[xx]' format
 $GLOBALS['TSFE']->checkAlternativeIdMethods();
+// Determines the id and evaluates any preview settings
 $GLOBALS['TSFE']->determineId();
+// Initialize the TypoScript template parser
 $GLOBALS['TSFE']->initTemplate();
+// Checks if config-array exists already but if not, gets it
 $GLOBALS['TSFE']->getConfigArray();
-//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($GLOBALS['TSFE']); die();
-//\TYPO3\CMS\Core\Core\Bootstrap::getInstance();
-//\TYPO3\CMS\Core\Core\Bootstrap::getInstance()->loadConfigurationAndInitialize();
 
-$GLOBALS['TSFE']->cObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');
+/* @var $GLOBALS['TSFE']->cObj \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer */
+$GLOBALS['TSFE']->cObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer::class);
+// Setting the language key that will be used by the current page
 $GLOBALS['TSFE']->settingLanguage();
+// Setting locale for frontend rendering
 $GLOBALS['TSFE']->settingLocale();
-/**
- * @var $objectManager \TYPO3\CMS\Extbase\Object\ObjectManager
- */
-$objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Extbase\Object\ObjectManager');
-/**
- * Initialize Extbase bootstap
- */
-$bootstrapConf['extensionName'] = $ajax['extensionName'];
-$bootstrapConf['pluginName'] = $ajax['pluginName'];
-$bootstrap = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Extbase\Core\Bootstrap');
+/* @var $objectManager \TYPO3\CMS\Extbase\Object\ObjectManager */
+$objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
+/* * *********************************
+ * Initialize the Extbase bootstap
+ * ******************************** */
+$bootstrapConf = [
+	'extensionName' => $ajax['extensionName'],
+	'pluginName' => $ajax['pluginName'],
+];
+/* @var $bootstrap \TYPO3\CMS\Extbase\Core\Bootstrap */
+$bootstrap = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Core\Bootstrap::class);
 $bootstrap->initialize($bootstrapConf);
-$bootstrap->cObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');
-//\TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-/**
+/* @var $bootstrap->cObj \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer */
+$bootstrap->cObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer::class);
+/* * *****$bootstrap*************
  * Build the request
- */
-$request = $objectManager->get('TYPO3\CMS\Extbase\Mvc\Request');
+ * ***************** */
+/* @var $request \TYPO3\CMS\Extbase\Mvc\Request */
+$request = $objectManager->get(\TYPO3\CMS\Extbase\Mvc\Request::class);
 $request->setControllerVendorName($ajax['vendor']);
 $request->setcontrollerExtensionName($ajax['extensionName']);
 $request->setPluginName($ajax['pluginName']);
 $request->setControllerName($ajax['controller']);
 $request->setControllerActionName($ajax['action']);
 $request->setArguments($ajax['arguments']);
-$request->setFormat("html"); // set to use html file as template -> default is txt
-$response = $objectManager->get('TYPO3\CMS\Extbase\Mvc\ResponseInterface');
-$dispatcher = $objectManager->get('TYPO3\CMS\Extbase\Mvc\Dispatcher');
+// set to use html file as template -> default is txt file
+$request->setFormat("html");
+/* @var $response \TYPO3\CMS\Extbase\Mvc\ResponseInterface */
+$response = $objectManager->get(\TYPO3\CMS\Extbase\Mvc\ResponseInterface::class);
+/* @var $dispatcher \TYPO3\CMS\Extbase\Mvc\Dispatcher */
+$dispatcher = $objectManager->get(\TYPO3\CMS\Extbase\Mvc\Dispatcher::class);
 $dispatcher->dispatch($request, $response);
 echo $response->getContent();
-//die();

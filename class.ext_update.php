@@ -5,7 +5,9 @@ use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * Update script
+ * Extension manager update script
+ * @see https://docs.typo3.org/typo3cms/CoreApiReference/singlehtml/
+ * [Example-2]
  *
  * @package EHAERER\EhBootstrap
  */
@@ -72,13 +74,14 @@ class ext_update
 			'uid, pid, tstamp, crdate, CType, header', $table, '', '', '', 1000
 		);
 
+		/* @var $message \TYPO3\CMS\Core\Messaging\FlashMessage */
 		if (count($res) > 0) {
 			$message = $this->getObjectManager()->get(
-				'TYPO3\\CMS\\Core\\Messaging\\FlashMessage', 'A total of ' . count($res) . ' content elements found.', 'Content elements found', FlashMessage::OK
+				\TYPO3\CMS\Core\Messaging\FlashMessage::class, 'A total of ' . count($res) . ' content elements found.', 'Content elements found', FlashMessage::OK
 			);
 		} else {
 			$message = $this->getObjectManager()->get(
-				'TYPO3\\CMS\\Core\\Messaging\\FlashMessage', 'No content elements found.', 'Nothing to do', FlashMessage::ERROR
+				\TYPO3\CMS\Core\Messaging\FlashMessage::class, 'No content elements found.', 'Nothing to do', FlashMessage::ERROR
 			);
 		}
 		$this->getFlashMessageQueue()->enqueue($message);
@@ -114,8 +117,8 @@ class ext_update
 	 */
 	protected function getView()
 	{
-		/** @var \TYPO3\CMS\Fluid\View\StandaloneView $view */
-		$view = $this->getObjectManager()->get('TYPO3\\CMS\\Fluid\\View\\StandaloneView');
+		/* @var $view \TYPO3\CMS\Fluid\View\StandaloneView */
+		$view = $this->getObjectManager()->get(\TYPO3\CMS\Fluid\View\StandaloneView::class);
 		$view->setTemplatePathAndFilename(GeneralUtility::getFileAbsFileName('EXT:' . $this->extensionKey . '/Resources/Private/Templates/UpdateScript/Index.html'));
 		$view->setLayoutRootPaths([GeneralUtility::getFileAbsFileName('EXT:' . $this->extensionKey . '/Resources/Private/Layouts')]);
 		$view->setPartialRootPaths([GeneralUtility::getFileAbsFileName('EXT:' . $this->extensionKey . '/Resources/Private/Partials')]);
@@ -128,8 +131,8 @@ class ext_update
 	protected function getFlashMessageQueue()
 	{
 		if (!isset($this->flashMessageQueue)) {
-			/** @var \TYPO3\CMS\Core\Messaging\FlashMessageService $flashMessageService */
-			$flashMessageService = $this->getObjectManager()->get('TYPO3\\CMS\\Core\\Messaging\\FlashMessageService');
+			/* @var $flashMessageService \TYPO3\CMS\Core\Messaging\FlashMessageService */
+			$flashMessageService = $this->getObjectManager()->get(\TYPO3\CMS\Core\Messaging\FlashMessageService::class);
 			$this->flashMessageQueue = $flashMessageService->getMessageQueueByIdentifier('reintcontentelements.errors');
 		}
 		return $this->flashMessageQueue;

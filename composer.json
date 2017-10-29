@@ -1,10 +1,13 @@
 {
 	"name": "ehaerer/eh-bootstrap",
 	"type": "typo3-cms-extension",
-	"description": "Bootstrap extension with examples of update script, eid integration, scheduler tasks.",
+	"description": "A TYPO3 example extension with examples of update script, eID integration, scheduler tasks and default TypoScript.",
 	"keywords": [
 		"TYPO3",
-		"extension"
+		"extension",
+		"bootstrap",
+		"beginner",
+		"template"
 	],
 	"homepage": "https://ephra.im",
 	"authors": [
